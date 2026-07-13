@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phạm Văn Hồng 1990 - Người Đàn Ông Trưởng Thành & Ấm Áp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Cổ điển, sang trọng) & Montserrat (Hiện đại, nam tính) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #060913; /* Nền tối xanh Navy huyền bí */
+            overflow-x: hidden;
+        }
+        .gentleman-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Hiệu ứng hào quang vàng Gold lịch lãm */
+        .gold-glow {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.25);
+        }
+        .text-gold-glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        /* Hiệu ứng cánh hoa trắng và hạt sương vàng rơi lãng mạn */
+        @keyframes fall-effect {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(110vh) translateX(100px) rotate(360deg) scale(1.1);
+                opacity: 0;
+            }
+        }
+        .falling-petal {
+            position: absolute;
+            pointer-events: none;
+            animation: fall-effect 10s linear infinite;
+        }
+        /* Glassmorphic card cao cấp với viền mạ vàng nhẹ */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+        }
+        .premium-card-hover:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            transform: translateY(-5px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Viền chuyển sắc hoàng gia */
+        .royal-border {
+            border: 3px solid transparent;
+            background-image: linear-gradient(#060913, #060913), linear-gradient(to right, #b38728, #fbf5b7, #da1b60, #b38728);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            animation: royal-wave 6s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes royal-wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="text-slate-200 antialiased relative">
+
+    <!-- Container hiệu ứng cánh hoa bay lãng mạn -->
+    <div id="petal-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <header class="sticky top-0 z-50 premium-card border-b border-amber-500/10 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5 cursor-pointer">
+                <span class="text-2xl">🌹</span>
+                <span class="font-bold text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 text-gold-glow">
+                    MR. HỒNG <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300">EST. 1990</span>
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-semibold text-amber-100/70">
+                <a href="#about" class="hover:text-amber-400 transition-colors">Về Anh</a>
+                <a href="#qualities" class="hover:text-amber-400 transition-colors">Bản Lĩnh Đàn Ông</a>
+                <a href="#future-plan" class="hover:text-amber-400 transition-colors">Kế Hoạch Tương Lai</a>
+                <a href="#compatibility" class="hover:text-amber-400 transition-colors">Đo Độ Thấu Hiểu</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <!-- Nút bật nhạc Jazz mộc mạc ấm cúng -->
+                <button onclick="toggleGentlemanMusic()" id="musicBtn" class="p-2.5 rounded-full bg-white/5 border border-amber-500/20 text-amber-300 hover:text-white hover:bg-amber-500/20 transition-all" title="Bật nhạc Jazz lãng mạn">
+                    ☕
+                </button>
+                <a href="#booking" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5">
+                    Gặp Gỡ Anh
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 py-12 md:py-24 grid md:grid-cols-12 gap-12 items-center relative z-10">
+        <!-- Hero Left Info -->
+        <div class="md:col-span-7 space-y-6 text-center md:text-left">
+            <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                ⭐ Người Đàn Ông Bản Lĩnh, Sâu Sắc & Chân Thành
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black leading-tight text-white gentleman-title">
+                Sự trưởng thành của anh,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 text-gold-glow">
+                    là điểm tựa bình yên cho em!
+                </span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl">
+                Chào em, anh là **Phạm Văn Hồng (1990)**. Bước qua những thăng trầm của cuộc sống, anh hiểu giá trị vững chắc của một gia đình bền ấm. Anh không hứa mang lại một thế giới hoàn mỹ, nhưng anh tự tin là chỗ tựa vững chãi và là bờ vai bình yên nhất mỗi khi em mỏi mệt.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 pt-2 justify-center md:justify-start">
+                <a href="#compatibility" class="px-7 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 hover:opacity-95 text-slate-950 font-bold rounded-2xl shadow-xl transition-all transform hover:scale-105 flex items-center gap-2 gold-glow">
+                    🌹 Đo Độ Tương Thích
+                </a>
+                <button onclick="spawnThumbsUpBurst(event)" class="px-7 py-4 bg-white/5 hover:bg-white/10 border border-amber-500/20 hover:border-amber-500/50 text-amber-200 font-bold rounded-2xl transition-all transform hover:scale-105 flex items-center gap-2">
+                    Trao Hoa Gửi Thiện Ý 👍
+                </button>
+            </div>
+            
+            <!-- Quick Stats Row -->
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-amber-500/10">
+                <div class="text-center md:text-left">
+                    <span class="block text-3xl font-black text-amber-400 text-gold-glow">1990</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/60 font-medium uppercase tracking-wider">Năm sinh (Canh Ngọ ấm áp)</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block text-3xl font-black text-amber-400 text-gold-glow">100%</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/60 font-medium uppercase tracking-wider">Chân Thành & Tử Tế</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="block text-3xl font-black text-amber-400 text-gold-glow">Vững vàng</span>
+                    <span class="text-[10px] md:text-xs text-amber-200/60 font-medium uppercase tracking-wider">Tâm lý & Cuộc sống</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Right Content: Tôn vinh bức ảnh chân dung người đàn ông trưởng thành image_0133ba.jpg -->
+        <div class="md:col-span-5 relative flex justify-center">
+            <!-- Hiệu ứng bóng sáng hoàng gia phía sau ảnh -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-500 to-indigo-600 rounded-3xl rotate-3 scale-102 opacity-20 blur-3xl"></div>
+            
+            <!-- Picture Container -->
+            <div class="relative max-w-sm w-full">
+                <!-- Royal border lấp lánh nâng tầm ảnh quý ông -->
+                <div class="royal-border p-2 rounded-3xl shadow-2xl gold-glow bg-slate-900 overflow-hidden">
+                    <img id="gentleman-photo" src="image_0133ba.jpg" alt="Phạm Văn Hồng (1990)" 
+                         class="w-full h-auto object-cover rounded-2xl hover:scale-[1.02] transition-all duration-700 ease-out">
+                </div>
+
+                <!-- Thẻ cam kết tình cảm phía dưới ảnh -->
+                <div class="absolute -bottom-6 -left-6 bg-slate-950/95 border border-amber-500/20 p-4 rounded-2xl shadow-2xl max-w-[240px] flex items-center gap-3.5 backdrop-blur-md transform hover:scale-105 transition-all">
+                    <div class="p-3 bg-amber-500/10 rounded-xl text-amber-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Tiêu Chuẩn Đàn Ông</p>
+                        <p class="text-xs text-slate-200">Trách nhiệm, sâu sắc, chu đáo trọn vẹn</p>
+                    </div>
+                </div>
+
+                <!-- Thẻ Hot Deal nhẹ nhàng, duyên dáng -->
+                <div class="absolute -top-4 -right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-xs font-black px-4 py-1.5 rounded-full shadow-lg transform rotate-6">
+                    MẪU QUÝ ÔNG ĐÍCH THỰC ✨
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="relative z-10 py-20 bg-gradient-to-b from-[#060913] via-[#090e1e] to-[#060913] border-y border-amber-500/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="bg-amber-500/10 text-amber-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-amber-500/20">Hồ Sơ Bản Thân</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Sự Chân Thành Gặp Gỡ Ở Độ Tuổi Chín Muồi</h2>
+                <p class="text-sm text-slate-400 mt-2">Dưới đây là những nét phác họa chân thật nhất về con người, tính cách và quan niệm sống của anh.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Box: Thông số quý ông -->
+                <div class="premium-card premium-card-hover p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-xl group-hover:bg-amber-500/15 transition-all"></div>
+                    <h3 class="text-xl font-bold text-amber-300 border-b border-amber-500/10 pb-3 flex items-center gap-2">
+                        <span>👔</span> Phẩm Chất & Phong Cách Sống
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-300 mt-6">
+                        <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="font-medium text-amber-200/70">Năm sinh:</span> 
+                            <span class="font-bold text-slate-100">1990 (Độ tuổi chín chắn nhất của đàn ông)</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="font-medium text-amber-200/70">Phong cách cốt lõi:</span> 
+                            <span class="font-bold text-slate-100">Lịch sự, phong thái tự tin, tôn trọng phụ nữ</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="font-medium text-amber-200/70">Năng khiếu lãng mạn:</span> 
+                            <span class="font-bold text-slate-100">Lắng nghe tinh tế, tặng hoa bất ngờ, thấu hiểu ý muốn</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2">
+                            <span class="font-medium text-amber-200/70">Phương châm yêu:</span> 
+                            <span class="font-bold text-amber-400">Yêu là đồng hành, sẻ chia và bảo vệ</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Box: Hệ Giá Trị Cam Kết -->
+                <div class="premium-card premium-card-hover p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-xl group-hover:bg-blue-500/15 transition-all"></div>
+                    <h3 class="text-xl font-bold text-blue-300 border-b border-blue-500/10 pb-3 flex items-center gap-2">
+                        <span>🛡️</span> Điểm Tựa Vững Chắc Cho Em
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-300 mt-6">
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 text-lg">✓</span>
+                            <span><strong>Kiểm Soát Cảm Xúc Tuyệt Vời:</strong> Không giận dỗi vô cớ. Luôn kiên nhẫn, điềm tĩnh đối thoại và giải quyết mọi khúc mắc một cách êm đẹp, yêu thương nhất.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 text-lg">✓</span>
+                            <span><strong>Hành Động Hơn Lời Nói:</strong> Thích quan tâm em bằng những hành động thực tế: đưa đón khi trời mưa, nấu một bữa tối ấm cúng hay đơn giản là giữ chặt tay em giữa phố đông.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400 text-lg">✓</span>
+                            <span><strong>Tôn Trọng Sự Riêng Tư:</strong> Khuyến khích em tự do theo đuổi ước mơ, sở thích cá nhân. Anh sẽ luôn là hậu phương và người cổ vũ trung thành nhất của em.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualities" class="relative z-10 py-20 bg-[#060913]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="bg-amber-500/10 text-amber-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-amber-500/20">Chỉ Số Bảo Chứng</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Tại Sao Anh Là Sự Lựa Chọn Hoàn Hảo?</h2>
+                <p class="text-sm text-slate-400 mt-2">Được minh chứng bởi thước đo năng lực chuẩn quý ông trưởng thành thực thụ.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Progress bars -->
+                <div class="space-y-6">
+                    <!-- Progress Bar 1 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-amber-100">
+                            <span>Sự kiên nhẫn & Thấu hiểu đối phương</span>
+                            <span class="text-amber-400 font-bold">99%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-amber-500/20">
+                            <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 h-full rounded-full animate-pulse" style="width: 99%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar 2 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-amber-100">
+                            <span>Mức độ chiều chuộng & Nuông chiều em</span>
+                            <span class="text-amber-400 font-bold">100%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-amber-500/20">
+                            <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 h-full rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar 3 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-amber-100">
+                            <span>Định hướng & Tính ổn định tương lai</span>
+                            <span class="text-amber-400 font-bold">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-amber-500/20">
+                            <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar 4 -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-sm font-semibold text-amber-100">
+                            <span>Sự lãng mạn & Quà tặng bất ngờ</span>
+                            <span class="text-amber-400 font-bold">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-amber-500/20">
+                            <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Romantic Quote Frame -->
+                <div class="bg-gradient-to-br from-[#121626]/80 to-[#1b1226]/80 border border-amber-500/20 p-8 rounded-3xl relative overflow-hidden shadow-2xl gold-glow">
+                    <div class="absolute -right-6 -bottom-6 text-9xl opacity-5 pointer-events-none select-none">🌹</div>
+                    <div class="text-amber-400 text-4xl mb-4 font-serif">“</div>
+                    <p class="text-slate-200 font-medium italic text-base leading-relaxed mb-6">
+                        "Khi còn trẻ, người ta có thể tìm kiếm những hào nhoáng, những cuộc vui chớp nhoáng. Nhưng khi đã bước qua tuổi 30, điều ý nghĩa nhất là tìm được một người sẵn sàng ôm lấy em sau một ngày dài mệt mỏi, người luôn lắng nghe và cùng em xây đắp một tổ ấm bình yên thực sự."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center font-bold text-amber-400">Pvh</div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Phạm Văn Hồng</p>
+                            <p class="text-xs text-amber-300/80">Quý Ông Chân Thành Sinh Năm 1990</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="future-plan" class="relative z-10 py-20 bg-gradient-to-b from-[#060913] via-[#090e1e] to-[#060913] border-t border-amber-500/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="bg-amber-500/10 text-amber-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-amber-500/20">Dự án cuộc đời</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Lộ Trình Cùng Em Xây Đắp Tương Lai</h2>
+                <p class="text-sm text-slate-400 mt-2">Không vẽ vời xa xôi, đây là những mục tiêu nghiêm túc và thực tế anh đã vạch sẵn cho cuộc đời của chúng ta.</p>
+            </div>
+
+            <!-- Future Roadmap Timeline -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phase 1 -->
+                <div class="premium-card p-8 rounded-3xl border border-amber-500/10 relative">
+                    <span class="absolute -top-4 left-6 bg-amber-500 text-slate-950 font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider">Giai đoạn 1</span>
+                    <h3 class="text-lg font-bold text-amber-300 mt-2 mb-3">☕ Tìm Hiểu & Đồng Điệu</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Cùng nhau đi cà phê cuối tuần, dạo phố yên bình, chia sẻ về những sở thích, quan niệm sống. Lắng nghe từng tâm sự nhỏ để thấu hiểu sâu sắc tâm hồn nhau.
+                    </p>
+                </div>
+                <!-- Phase 2 -->
+                <div class="premium-card p-8 rounded-3xl border border-amber-500/10 relative">
+                    <span class="absolute -top-4 left-6 bg-amber-500 text-slate-950 font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider">Giai đoạn 2</span>
+                    <h3 class="text-lg font-bold text-amber-300 mt-2 mb-3">🏡 Gắn Kết & Trải Nghiệm</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Cùng đi du lịch nghỉ dưỡng thoải mái, ra mắt gia đình, bạn bè hai bên. Cùng chuẩn bị và lên kế hoạch cho cuộc sống chung một cách chu đáo, tự lập và ấm cúng.
+                    </p>
+                </div>
+                <!-- Phase 3 -->
+                <div class="premium-card p-8 rounded-3xl border border-amber-500/10 relative">
+                    <span class="absolute -top-4 left-6 bg-amber-500 text-slate-950 font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider">Giai đoạn 3</span>
+                    <h3 class="text-lg font-bold text-amber-300 mt-2 mb-3">🌻 Tổ Ấm Bình Yên</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Cùng nhau vun đắp gia đình nhỏ ấm áp, chào đón thiên thần nhỏ. Chăm sóc em thật chu đáo, là bờ vai vững chắc nuôi dưỡng hạnh phúc bền lâu bền bỉ theo năm tháng.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="compatibility" class="relative z-10 py-20 bg-[#060913]">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-amber-500/10 text-amber-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider border border-amber-500/20">Trắc Nghiệm Quý Ông</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-3 text-white gentleman-title">Xem Chúng Mình Hợp Nhau Thế Nào? 💘</h2>
+                <p class="text-sm text-slate-400 mt-2">Một bài trắc nghiệm ngắn 3 câu để xem quan điểm sống của em có đồng điệu với một quý ông 1990 tinh tế hay không.</p>
+            </div>
+
+            <!-- Quiz Container Card -->
+            <div class="premium-card p-6 md:p-10 rounded-3xl border border-amber-500/20 gold-glow relative overflow-hidden">
+                <form id="compatibilityForm" class="space-y-8">
+                    <!-- Question 1 -->
+                    <div class="space-y-3">
+                        <p class="font-bold text-amber-200 flex items-center gap-2">
+                            <span class="flex items-center justify-center h-6 w-6 rounded-full bg-amber-500/20 text-xs text-amber-300 font-mono">1</span>
+                            Đối với em, điểm tựa lớn nhất của người đàn ông là gì?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ1" value="A" class="accent-amber-500 scale-125" required>
+                                <span class="text-xs md:text-sm text-slate-300">Sự điềm tĩnh, ấm áp và luôn tôn trọng em</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ1" value="B" class="accent-amber-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Tính hài hước, trẻ trung năng động</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ1" value="C" class="accent-amber-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Sự thực tế, chín chắn và có định hướng sống tốt</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="space-y-3">
+                        <p class="font-bold text-amber-200 flex items-center gap-2">
+                            <span class="flex items-center justify-center h-6 w-6 rounded-full bg-amber-500/20 text-xs text-amber-300 font-mono">2</span>
+                            Cuối tuần bình yên nhất của hai người trong mắt em?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ2" value="A" class="accent-amber-500 scale-125" required>
+                                <span class="text-xs md:text-sm text-slate-300">Nấu ăn tại nhà và cùng nhau trò chuyện ấm cúng</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ2" value="B" class="accent-amber-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Đi uống cà phê nhẹ nhàng và đi dạo phố tối</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ2" value="C" class="accent-amber-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Cả 2 đều thích hợp, miễn là đi bên nhau</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="space-y-3">
+                        <p class="font-bold text-amber-200 flex items-center gap-2">
+                            <span class="flex items-center justify-center h-6 w-6 rounded-full bg-amber-500/20 text-xs text-amber-300 font-mono">3</span>
+                            Khi em mỏi mệt sau một ngày áp lực công việc, em muốn người yêu làm gì nhất?
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ3" value="A" class="accent-amber-500 scale-125" required>
+                                <span class="text-xs md:text-sm text-slate-300">Mua đồ ăn ngon mang sang, xoa bóp vai và ôm thật chặt</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ3" value="B" class="accent-amber-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Để em một mình yên tĩnh xả stress rồi nói chuyện sau</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 bg-slate-950/50 hover:bg-slate-900 border border-amber-500/10 hover:border-amber-400/50 rounded-2xl cursor-pointer transition-all">
+                                <input type="radio" name="compQ3" value="C" class="accent-amber-500 scale-125">
+                                <span class="text-xs md:text-sm text-slate-300">Kiên nhẫn lắng nghe em kể khổ và đưa ra lời khuyên chân thành</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                        <button type="button" onclick="calculateGentlemanMatch()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-bold text-slate-950 rounded-full group bg-gradient-to-br from-amber-400 via-yellow-400 to-amber-600 hover:text-slate-950 focus:ring-4 focus:outline-none focus:ring-amber-200 transition-all transform hover:scale-105 gold-glow">
+                            <span class="relative px-8 py-3.5 transition-all ease-in duration-75 bg-slate-950 text-amber-300 rounded-full group-hover:bg-opacity-0 group-hover:text-slate-950">
+                                Xem Mức Độ Thấu Hiểu Nhau 🌹
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Result Card -->
+                <div id="matchResult" class="hidden mt-8 p-8 bg-gradient-to-br from-[#121626]/95 to-[#1b1226]/95 border-2 border-amber-500/30 rounded-3xl text-center space-y-6 transform scale-95 transition-all duration-300">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 text-3xl animate-bounce">
+                        🌹
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-amber-400 font-bold">Chỉ Số Thấu Hiểu Quý Ông</p>
+                        <div class="text-6xl font-black text-amber-400 text-gold-glow mt-2" id="scorePercent">98%</div>
+                    </div>
+                    <p class="text-slate-200 max-w-lg mx-auto text-sm md:text-base leading-relaxed" id="matchFeedback">
+                        Sự thấu hiểu của hai ta thật sự tuyệt vời! Quan điểm sống của em cực kỳ phù hợp với mẫu người đàn ông trưởng thành, có chiều sâu của anh. Hãy cùng nhau uống một ly trà và trò chuyện nhiều hơn nhé!
+                    </p>
+                    <div class="pt-2">
+                        <button type="button" onclick="resetMatchTest()" class="text-xs font-bold uppercase tracking-wider text-amber-400 hover:text-white underline decoration-amber-500 underline-offset-4">
+                            Kiểm Tra Lại
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="relative z-10 py-20 bg-gradient-to-b from-[#060913] to-[#04060d]">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="premium-card p-8 md:p-12 rounded-3xl border-2 border-amber-500/20 gold-glow relative">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black px-6 py-2.5 rounded-xl text-xs uppercase tracking-widest shadow-xl">
+                    Hộp Thư Hẹn Hò Tinh Tế
+                </div>
+
+                <div class="text-center mt-4 mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white gentleman-title">Gửi Lời Nhắn Đến Anh</h3>
+                    <p class="text-slate-400 text-xs mt-1">Một lời mời cà phê cuối tuần hay một lời chia sẻ chân thành sẽ luôn được anh trân trọng đón nhận.</p>
+                </div>
+
+                <form id="gentlemanApplyForm" onsubmit="submitGentlemanApply(event)" class="space-y-5">
+                    <!-- Name Input -->
+                    <div>
+                        <label class="block text-xs font-bold text-amber-300 uppercase tracking-widest mb-1.5">Tên của em là?</label>
+                        <input type="text" id="visitorName" required placeholder="Nhập tên đáng yêu của em..." 
+                               class="w-full px-4 py-3 bg-slate-950/60 border border-amber-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-100 placeholder-slate-600 text-sm">
+                    </div>
+
+                    <!-- Contact Input -->
+                    <div>
+                        <label class="block text-xs font-bold text-amber-300 uppercase tracking-widest mb-1.5">Cách liên lạc ấm áp?</label>
+                        <input type="text" id="visitorContact" required placeholder="Số điện thoại / Facebook / Zalo..." 
+                               class="w-full px-4 py-3 bg-slate-950/60 border border-amber-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-100 placeholder-slate-600 text-sm">
+                    </div>
+
+                    <!-- Date Style Dropdown -->
+                    <div>
+                        <label class="block text-xs font-bold text-amber-300 uppercase tracking-widest mb-1.5">Gu Hẹn Hò Em Yêu Thích</label>
+                        <select id="datingStyle" class="w-full px-4 py-3 bg-slate-950/60 border border-amber-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-200 text-sm">
+                            <option value="coffee">Cà phê nhẹ nhàng, nhạc Trịnh sâu lắng cuối tuần</option>
+                            <option value="dinner">Bữa tối ấm cúng dưới ánh nến tại nhà anh tự tay nấu</option>
+                            <option value="walk">Đi dạo hồ Tây ngắm hoàng hôn cực lãng mạn</option>
+                            <option value="custom">Một phương án hẹn hò đặc biệt do em tự lên lịch</option>
+                        </select>
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div>
+                        <label class="block text-xs font-bold text-amber-300 uppercase tracking-widest mb-1.5">Lời nhắn gửi chân thành</label>
+                        <textarea id="visitorMessage" rows="3" placeholder="Em muốn nhắn gửi điều gì với anh?" 
+                                  class="w-full px-4 py-3 bg-slate-950/60 border border-amber-500/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-100 placeholder-slate-600 text-sm"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 uppercase tracking-wider text-xs">
+                        Gửi Lời Mời Kết Lối Chân Thành 📩
+                    </button>
+                </form>
+
+                <!-- Success Box View -->
+                <div id="applySuccess" class="hidden text-center p-8 space-y-4">
+                    <div class="w-20 h-20 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-4xl animate-bounce border border-emerald-500/20">
+                        💌
+                    </div>
+                    <h4 class="text-2xl font-bold text-white gentleman-title">Gửi Lời Nhắn Thành Công!</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed max-w-md mx-auto">
+                        Cảm ơn <span id="successVisitor" class="font-bold text-amber-400">Em</span> rất nhiều! Lời nhắn ấm áp đã được gửi trực tiếp đến hộp thư của anh Hồng. Anh sẽ phản hồi em nhanh nhất qua <span id="successContactInfo" class="font-bold text-amber-400">địa chỉ liên lạc</span> của em nhé!
+                    </p>
+                    <div class="pt-4">
+                        <button type="button" onclick="resetApply()" class="text-xs text-amber-400 underline hover:text-white">Gửi thêm lời nhắn mới</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-16 bg-[#04060d] border-t border-amber-500/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-amber-500/10 text-amber-400 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-amber-500/20">Sự Thừa Nhận</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-white mt-2 gentleman-title">Người Thân Nói Gì Về Anh Hồng?</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="premium-card p-6 rounded-2xl border border-amber-500/5 space-y-3">
+                    <div class="text-amber-400 text-lg">★★★★★</div>
+                    <p class="text-xs text-slate-300 italic">"Hồng nó chín chắn lắm, hiếu thảo với cha mẹ, chu toàn trong mọi việc của họ hàng hai bên. Đúng mẫu người đàn ông của gia đình."</p>
+                    <p class="text-xs font-bold text-amber-400">— Người thân trong họ</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="premium-card p-6 rounded-2xl border border-amber-500/5 space-y-3">
+                    <div class="text-amber-400 text-lg">★★★★★</div>
+                    <p class="text-xs text-slate-300 italic">"Trong công việc thì uy tín, luôn tôn trọng lẽ phải. Ngoài đời thì vô cùng tử tế, hay giúp đỡ anh em bạn bè, cực kỳ đáng tin cậy."</p>
+                    <p class="text-xs font-bold text-amber-400">— Đồng nghiệp & Bạn bè lâu năm</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="premium-card p-6 rounded-2xl border border-amber-500/5 space-y-3">
+                    <div class="text-amber-400 text-lg">★★★★★</div>
+                    <p class="text-xs text-slate-300 italic">"Nấu nướng cực kỳ có gu, phong cách ăn mặc luôn lịch lãm gọn gàng, cách nói chuyện từ tốn và cực kỳ ấm áp."</p>
+                    <p class="text-xs font-bold text-amber-400">— Em họ thân thiết</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-[#020307] text-slate-500 py-10 text-center text-xs border-t border-amber-500/5">
+        <div class="max-w-6xl mx-auto px-6 space-y-3">
+            <p class="text-amber-400/40 font-semibold uppercase tracking-widest text-[10px]">© 2026 Phạm Văn Hồng • Cam kết hạnh phúc đích thực và bền vững trọn đời</p>
+            <p class="text-slate-600">Trang cá nhân độc quyền nhằm mục đích tìm kiếm một nửa yêu thương chân thành.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Web Audio API Synthesizer - Nhạc nền Jazz cổ điển, mộc mạc, thư thái
+        let audioCtx = null;
+        let melodyInterval = null;
+        let isPlaying = false;
+
+        function playPianoNote(freq, duration, volume = 0.05) {
+            if (!audioCtx) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                // Sử dụng sóng 'triangle' để âm thanh dịu giống tiếng phím piano điện
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(volume, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function toggleGentlemanMusic() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            const musicBtn = document.getElementById('musicBtn');
+
+            if (isPlaying) {
+                clearInterval(melodyInterval);
+                isPlaying = false;
+                musicBtn.innerText = "☕";
+                musicBtn.classList.remove('bg-amber-500/30', 'animate-pulse');
+            } else {
+                isPlaying = true;
+                musicBtn.innerText = "⏸️";
+                musicBtn.classList.add('bg-amber-500/30', 'animate-pulse');
+
+                // Vòng hợp âm Jazz lãng mạn lofi (Cmaj7 - Am7 - Dm7 - G7)
+                const chords = [
+                    [261.63, 329.63, 392.00, 493.88], // Cmaj7
+                    [220.00, 261.63, 329.63, 392.00], // Am7
+                    [293.66, 349.23, 440.00, 523.25], // Dm7
+                    [196.00, 246.94, 293.66, 392.00]  // G7
+                ];
+                let chordIndex = 0;
+                
+                melodyInterval = setInterval(() => {
+                    const currentChord = chords[chordIndex % chords.length];
+                    // Chạy hợp âm rải dịu êm
+                    currentChord.forEach((note, i) => {
+                        setTimeout(() => {
+                            playPianoNote(note, 2.5, 0.03);
+                        }, i * 180);
+                    });
+                    
+                    // Thêm một nốt giai điệu ngẫu nhiên ngọt ngào
+                    if (chordIndex % 2 === 0) {
+                        setTimeout(() => {
+                            const melodyNote = currentChord[Math.floor(Math.random() * currentChord.length)] * 2;
+                            playPianoNote(melodyNote, 1.8, 0.02);
+                        }, 800);
+                    }
+                    
+                    chordIndex++;
+                }, 3000);
+            }
+        }
+
+        // Tạo hiệu ứng rơi cánh hoa trắng & bụi sao lấp lánh (phù hợp với đóa hoa anh cầm)
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('petal-container');
+            const icons = ['🌸', '✨', '⚪', '🌻', '🥀']; // Cánh hoa trắng và ánh sao
+
+            function spawnPetal(customX = null, customY = null) {
+                if (!container) return;
+                const petal = document.createElement('span');
+                petal.classList.add('falling-petal');
+                
+                const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                petal.innerText = randomIcon;
+                
+                if (customX && customY) {
+                    petal.style.left = customX + 'px';
+                    petal.style.top = customY + 'px';
+                    petal.style.animation = 'fall-effect 6s ease-out forwards';
+                } else {
+                    petal.style.left = Math.random() * 100 + 'vw';
+                    petal.style.animationDuration = Math.random() * 6 + 7 + 's'; // 7s - 13s
+                }
+
+                petal.style.fontSize = Math.random() * 14 + 12 + 'px';
+                petal.style.opacity = Math.random() * 0.6 + 0.3;
+
+                container.appendChild(petal);
+
+                // Tự động giải phóng bộ nhớ
+                setTimeout(() => {
+                    petal.remove();
+                }, 13000);
+            }
+
+            // Tạo tự động theo định kỳ nhẹ nhàng
+            setInterval(spawnPetal, 900);
+        });
+
+        // Click "Trao Hoa Gửi Thiện Ý" sẽ bùng nổ hiệu ứng ngón tay Like (Giống tư thế pose của anh Hồng) và Hoa hồng
+        function spawnThumbsUpBurst(e) {
+            const rect = e.target.getBoundingClientRect();
+            const startX = rect.left + rect.width / 2;
+            const startY = rect.top + window.scrollY;
+
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const container = document.getElementById('petal-container');
+                    const element = document.createElement('span');
+                    element.classList.add('falling-petal');
+                    const icons = ['👍', '🌹', '✨', '💖', '⭐'];
+                    element.innerText = icons[Math.floor(Math.random() * icons.length)];
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 100 + 40;
+
+                    element.style.left = startX + 'px';
+                    element.style.top = startY + 'px';
+                    element.style.fontSize = Math.random() * 20 + 14 + 'px';
+                    
+                    element.animate([
+                        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                        { transform: `translate(${Math.cos(angle) * velocity}px, ${Math.sin(angle) * velocity - 150}px) scale(1.6)`, opacity: 0 }
+                    ], {
+                        duration: 2500,
+                        easing: 'ease-out'
+                    });
+
+                    container.appendChild(element);
+                    setTimeout(() => element.remove(), 2500);
+                }, i * 40);
+            }
+        }
+
+        // Xử lý quiz trắc nghiệm độ hòa hợp
+        function calculateGentlemanMatch() {
+            const form = document.getElementById('compatibilityForm');
+            const q1 = form.elements['compQ1'].value;
+            const q2 = form.elements['compQ2'].value;
+            const q3 = form.elements['compQ3'].value;
+
+            const feedbackBox = document.getElementById('matchResult');
+            const scoreVal = document.getElementById('scorePercent');
+            const scoreFeedback = document.getElementById('matchFeedback');
+
+            if (!q1 || !q2 || !q3) {
+                scoreVal.innerText = "Chưa Trả Lời";
+                scoreFeedback.innerText = "Em hãy vui lòng hoàn thành cả 3 câu trắc nghiệm ngắn để anh thấu hiểu chuẩn xác nhất nhé!";
+                feedbackBox.classList.remove('hidden');
+                feedbackBox.scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            // Tính điểm thú vị dựa trên lựa chọn đồng điệu
+            let score = 85.0;
+            if (q1 === 'A' || q1 === 'C') score += 7.5;
+            if (q2 === 'A' || q2 === 'C') score += 4.5;
+            if (q3 === 'A' || q3 === 'C') score += 3.0;
+            if (score > 100) score = 100;
+
+            scoreVal.innerText = score.toFixed(1) + '%';
+            
+            if (score >= 95) {
+                scoreFeedback.innerText = "Em thật tuyệt vời! Hai ta đồng hành cùng một tần số sống tinh tế. Không gian gia đình, sự thấu hiểu bình lặng là điều mà cả anh và em đều trân quý. Đừng ngại chia sẻ lời mời trò chuyện nhé!";
+            } else {
+                scoreFeedback.innerText = "Một chỉ số tương hợp vô cùng lý tưởng! Sự khác biệt nhẹ nhàng trong gu sống sẽ giúp hai ta bù trừ những mảnh khuyết của nhau một cách hoàn hảo nhất. Cùng kết nối để cảm nhận rõ hơn em nhé!";
+            }
+
+            feedbackBox.classList.remove('hidden');
+            feedbackBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetMatchTest() {
+            document.getElementById('compatibilityForm').reset();
+            document.getElementById('matchResult').classList.add('hidden');
+        }
+
+        // Xử lý nộp đơn kết nối hẹn hò
+        function submitGentlemanApply(event) {
+            event.preventDefault();
+            
+            const vName = document.getElementById('visitorName').value;
+            const vContact = document.getElementById('visitorContact').value;
+
+            document.getElementById('successVisitor').innerText = vName;
+            document.getElementById('successContactInfo').innerText = vContact;
+
+            document.getElementById('gentlemanApplyForm').classList.add('hidden');
+            document.getElementById('applySuccess').classList.remove('hidden');
+        }
+
+        function resetApply() {
+            document.getElementById('gentlemanApplyForm').reset();
+            document.getElementById('gentlemanApplyForm').classList.remove('hidden');
+            document.getElementById('applySuccess').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
